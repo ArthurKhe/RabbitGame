@@ -34,9 +34,10 @@ namespace RabbitGameWithDraw
             Pen pn = new Pen(Color.Black, 1);  // Перо для рисования
             Graphics g = canvas.CreateGraphics();
             Point center = new Point(0, 0);
-
-            Rectangle r = Rectangle.CreateRectangle(new Point(-Figure.offsets[0, 0], 10), center);
-            r.Draw(g, pn);
+            g.DrawLine(pn, 0, (int)canvas.Size.Height / 2, canvas.Size.Width, (int)canvas.Size.Height / 2);
+            g.DrawLine(pn, (int)canvas.Size.Width / 2, 0, (int)canvas.Size.Width / 2, canvas.Size.Height);
+            Rabbit rabbit = Rabbit.CreateRabbit();
+            rabbit.Draw(g, pn);
         }
 
         private void Form1_Load(object sender, EventArgs e)

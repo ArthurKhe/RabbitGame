@@ -48,7 +48,7 @@ namespace RabbitGameWithDraw
         public void Draw(Graphics g, Pen pn)
         {
             Matrix drawMatrix = matrix.AddRow(offsets);
-            for (int i=0; i < drawMatrix.N; i++)
+            for (int i=0; i < drawMatrix.M; i++)
             {
                 drawMatrix[i, 1] *= -1;
             }
