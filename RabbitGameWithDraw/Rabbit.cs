@@ -8,7 +8,7 @@ namespace RabbitGameWithDraw
 {
     class Rabbit : ComplexFigure
     {
-        public Rabbit(List<Figure> figures): base(figures)
+        public Rabbit(List<Figure> figures, Point center): base(figures, center)
         {
 
         }
@@ -16,36 +16,36 @@ namespace RabbitGameWithDraw
         {
             List<Point> bodyPoints = new List<Point>
             {
-                new Point(-30, 120),
-                new Point(-10, 120),
-                new Point(-10, 80),
-                new Point(10, 80),
-                new Point(10, 120),
-                new Point(30, 120),
-                new Point(30, 30),
-                new Point(30, 10),
-                new Point(25, 0),
-                new Point(20, 10),
-                new Point(15, 0),
-                new Point(10, 10),
-                new Point(5, 0),
-                new Point(0, 10),
-                new Point(-5, 0),
-                new Point(-10, 10),
-                new Point(-15, 0),
-                new Point(-20, 10),
-                new Point(-25, 0),
-                new Point(-30, 10),
+                new Point(-30, 60),
+                new Point(-10, 60),
+                new Point(-10, 20),
+                new Point(10, 20),
+                new Point(10, 60),
+                new Point(30, 60),
+                new Point(30, -30),
+                new Point(30, -50),
+                new Point(25, -60),
+                new Point(20, -50),
+                new Point(15, -60),
+                new Point(10, -50),
+                new Point(5, -60),
+                new Point(0, -50),
+                new Point(-5, -60),
+                new Point(-10, -50),
+                new Point(-15, -60),
+                new Point(-20, -50),
+                new Point(-25, -60),
+                new Point(-30, -50),
             };
             List<Figure> figures = new List<Figure> 
             {
                 new Figure(bodyPoints),
-                Rectangle.CreateRectangle(new Point(-20,70), new Point(-10,60)),
-                Rectangle.CreateRectangle(new Point(10,70), new Point(20,60)),
-                Rectangle.CreateRectangle(new Point(-10, 50), new Point(10,40))
+                Rectangle.CreateRectangle(new Point(-20, 10), new Point(-10, 0)),
+                Rectangle.CreateRectangle(new Point(10, 10), new Point(20, 0)),
+                Rectangle.CreateRectangle(new Point(-10, -10), new Point(10, -20))
 
             };
-            return new Rabbit(figures);
+            return new Rabbit(figures, new Point(0, 0));
         }
     }
 }

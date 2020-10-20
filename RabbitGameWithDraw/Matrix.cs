@@ -162,5 +162,19 @@ namespace RabbitGameWithDraw
             result.ProcessFunctionOverData((i, j) => result[i, j] = this[i, j] + row[0, j]);
             return result;
         }
+
+        public Matrix SubRow(Matrix row)
+        {
+            var result = new Matrix(M, N);
+            result.ProcessFunctionOverData((i, j) => result[i, j] = this[i, j] - row[0, j]);
+            return result;
+        }
+
+        public Matrix Clone()
+        {
+            var result = new Matrix(M, N);
+            result.ProcessFunctionOverData((i, j) => result[i, j] = this[i, j]);
+            return result;
+        }
     }
 }

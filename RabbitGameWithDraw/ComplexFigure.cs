@@ -11,9 +11,10 @@ namespace RabbitGameWithDraw
     {
         List<Figure> figures = null;
         Point center = null;
-        public ComplexFigure(List<Figure> figures) 
+        public ComplexFigure(List<Figure> figures, Point center) 
         {
-            this.figures = figures;    
+            this.figures = figures;
+            this.center = center;
         }
         public void Draw(Graphics g, Pen pn)
         {
@@ -22,14 +23,28 @@ namespace RabbitGameWithDraw
                 figure.Draw(g, pn);
             }
         }
-        private void Move(float x, float y)
-        {
 
-        }
-        private void Rotate(float angle)
+        public void Rotate(double angle)
         {
-
+            foreach (Figure figure in figures)
+            {
+                figure.Rotate(angle, center);
+            }
         }
-        private void Transform(float scale) { }
+        public void Move(double x, double y)
+        {
+            foreach (Figure figure in figures)
+            {
+                figure.Move(x, y);
+            }
+        }
+        public void Transform(double scale)
+        {
+            foreach (Figure figure in figures)
+            {
+                figure.Transform(scale);
+            }
+        }
+
     }
 }
